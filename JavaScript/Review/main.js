@@ -69,3 +69,25 @@ const coche = {
     coche.mostrarDatos();
 document.write(coche.modelo + "<br>");
 console.log(coche)
+
+// Promesas
+let saludar = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let saludo = "Bienvenidos a JavaScript" ;
+
+        if (saludo) {
+            resolve(saludo);
+        } else {
+            reject("No se pudo mostrar el saludo"); 
+        }
+
+    }, 3000);
+});
+        
+        
+saludar.then(resultado =>{
+    alert(resultado);
+})
+.catch(err =>{
+    alert(err);
+})
