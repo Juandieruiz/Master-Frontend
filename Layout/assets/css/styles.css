@@ -208,18 +208,49 @@ body{
     background-color: black;
 }
 
-input[type="text"]{
+.mid-form{
+    width: 50%;
+    margin: 0px auto;
+
+}
+
+.mid-form label{
+    text-align: left;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+input[type="text"],
+textarea{
     width: 100%;
     height: 30px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     padding: 3px;	
     margin-bottom: 5px;
     transition: 300ms all;
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus,textarea:focus{
     box-shadow: 0px 0px 5px #444 inset;
+}
+
+textarea{
+    width: 100%;
+    height: 150px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    max-height: 300px;
+}
+
+.radibuttons{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+
 }
 
 #footer{
