@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Maquetado Master Frameworks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- HOJA DE ESTILOS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <!-- JAVASCRIPT -->
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="center">
+
+        <!-- LOGO -->
+        <div id="logo">
+            <img src="./assets/images/angular.png" class="app-logo" alt="Logotipo">
+        
+            <!-- BRAND -->
+            <span id="brand">
+                <strong>Angular</strong> Framework
+            </span>
+        </div>
+            <!-- MENU -->
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="formulario.html">Formulario</a></li>
+                    <li><a href="#">Página 1</a></li>
+                    <li><a href="#">Página 2</a></li>
+                </ul>
+            </nav>
+    <!-- Limpiar Flotados-->
+    <div class="clearfix"></div>
+        </div>
+    </header>
+    
+    <!-- Slider -->
+    <div id="slider" class="slider-big">
+        <h1>Bienvenido al Framework Angular</h1>
+        <a href="#" class="btn-white">Ir al blog</a>
+    </div>
+
+    <div class="center">
+        <section id="content">
+            <h2 class="subheader">Últimos artículos</h2>
+
+            <!-- Listado articulos -->
+        <div id="articles">
+            <article class="article-item" id="article-template">
+                <div class="image-wrap">
+                    <img src="https://picsum.photos/id/1/400/300" alt="imagen random">
+                </div>
+                <h2>Artículo de prueba</h2>
+                <span class="date">
+                    Hace 5 minutos
+                </span>
+                <a href="#">Leer más</a>
+                <div class="clearfix"></div>
+            </article>
+        </div>
+        <!-- Añadir Articulos desde main.js -->
+
+
+        </section>
+
+        <!-- SideBar, Barra Lateral -->
+        <aside id="sidebar">
+            <div id="nav-blog" class="sidebar-item">
+                <h3>Artículos</h3>
+                <a href="#" class="btn btn-success">Crear artículo</a>
+            </div>
+        <!-- Buscador -->
+            <div id="search" class="sidebar-item">
+                <h3>Buscador</h3>
+                <p>Encuentra el artículo que buscas</p>
+                <form>
+                    <input type="text" placeholder="Buscar...">
+                    <input type="submit" value="Buscar" class="btn">
+                </form>
+            </div>
+        </aside>
+        <div class="clearfix"></div>
+    </div>
+    
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="center">
+            <p>Máster en Frameworks para JavaScript by Juandieruiz &copy;</p>
+        </div>
+</body>
+</html>
