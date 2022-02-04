@@ -15,7 +15,7 @@ body{
     width: 100%;
     background: white;
     border-bottom: 1px solid #ccc;
-    border-top: 5px solid black ;
+    border-top: 5px solid #61dafb;
 }
 
 .center{
@@ -99,7 +99,15 @@ body{
     background: #61dafb;
 
      /*DEGRADADO CSS*/
-     background-image: linear-gradient(to right,  #00ffbf,#ff0000, green);}
+     background: rgba(73,155,234,1);
+     background: -moz-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
+     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(81,175,247,1)));
+     background: -webkit-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
+     background: -o-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
+     background: -ms-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
+     background: radial-gradient(ellipse at center, rgba(73,155,234,1) 0%, rgba(81,175,247,1) 100%);
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#51aff7', GradientType=1 );
+ }
 
 #slider h1{
     margin-top: 0.2px;
@@ -193,12 +201,11 @@ body{
 }
 
 .btn-success{
-    background-color: black;
+    background-color: #2B4162;
 }
 
 .btn-success:hover{
-    background-color: white;
-    color: black;
+    background-color: black;
 }
 
 .mid-form{
@@ -277,7 +284,7 @@ textarea{
 }
 
 .article-item .image-wrap img{
-    height: 85%;
+    height: 100%;
     text-align: center;
 }
 
@@ -320,7 +327,7 @@ textarea{
 .article-detail .image-wrap {
     float: none;
     width: 100%;
-    height: 500px;
+    height: 300px;
 
 }
 
@@ -344,9 +351,7 @@ textarea{
         width: 90%;
     }
     #brand{
-        margin-top: 10px;
-
-        font-size: 27px;
+        font-size: 28px;
     }
 
     #menu ul{
@@ -355,13 +360,12 @@ textarea{
 }
 
 /*Desde la anchura 0px hasta la anchura 1140px de pantalla*/
-@media (max-width: 1173px){
+@media (max-width: 1140px){
     .center{
         width: 90%;
     }
     #brand{
-        margin-top: 10px;
-        font-size: 25px;
+        font-size: 28px;
     }
 
     #menu ul{
@@ -369,13 +373,12 @@ textarea{
     }
 }
 /*Desde la anchura 0px hasta la anchura 1020px de pantalla*/
-@media (max-width: 1120px){
+@media (max-width: 1025px){
     .center{
         width: 90%;
     }
     #brand{
-        margin-top: 10px;
-        font-size: 23px;
+        font-size: 27px;
     }
 
     #menu ul{
@@ -383,33 +386,13 @@ textarea{
     }
 }
 
-@media (max-width: 1030px){
-    .center{
-        width: 90%;
-    }
-    #brand{
-        margin-top: 10px;
-        font-size: 20px;
-    }
-
-    #menu ul{
-        width: auto;
-    }
-}
-
-@media (max-width: 970px){
-    
-    #header{
-        min-height: 160px;
-        overflow: hidden;
-    }
+@media (max-width: 990px){
     #logo{
         float:none;
         width: 240px;
         margin: 0px auto;
         margin-top: 20px;
     }
-    
     #brand {
         margin-top: 4px;
         font-size: 23px;
@@ -448,7 +431,7 @@ textarea{
 }
     @media (max-width: 520px){
         #header{
-            min-height: 160px;
+            min-height: 130px;
             overflow: hidden;
         }
 

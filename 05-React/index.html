@@ -7,6 +7,8 @@
 
     <!-- HOJA DE ESTILOS -->
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <!-- JAVASCRIPT -->
+    <script src="main.js"></script>
 </head>
 <body>
 
@@ -16,11 +18,11 @@
 
         <!-- LOGO -->
         <div id="logo">
-            <img src="../03-Layout/assets/images/juandieruiz.jpg" class="app-logo" alt="Logotipo">
+            <img src="./assets/images/react.png" class="app-logo" alt="Logotipo">
         
             <!-- BRAND -->
             <span id="brand">
-                <strong>Template</strong> Framework
+                <strong>React</strong> Framework
             </span>
         </div>
             <!-- MENU -->
@@ -38,31 +40,33 @@
         </div>
     </header>
     
+    <!-- Slider -->
+    <div id="slider" class="slider-big">
+        <h1>Bienvenido al Framework React</h1>
+        <a href="#" class="btn-white">Ir al blog</a>
+    </div>
 
     <div class="center">
         <section id="content">
-            
-            <article class="article-item article-detail" id="article-template">
+            <h2 class="subheader">Últimos artículos</h2>
+
+            <!-- Listado articulos -->
+        <div id="articles">
+            <article class="article-item" id="article-template">
                 <div class="image-wrap">
-                    <img src="./assets/images/frameworksJS.jfif"  alt="imagen random">
+                    <img src="https://picsum.photos/id/1/400/300" alt="imagen random">
                 </div>
-                <h1 class="subheader">¿Que Framework elegir?</h1>
+                <h2>Artículo de prueba</h2>
                 <span class="date">
                     Hace 5 minutos
                 </span>
-                <p>
-                    <strong>React</strong> (también llamada React.js o ReactJS) es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y la comunidad de software libre. En el proyecto hay más de mil desarrolladores libres.
-                </p>
-                <p>
-                    
-                    <strong>Angular</strong> (comúnmente llamado Angular 2+ o Angular 2) es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
-                </p>
-                <p>
-                    <strong>Vue.js</strong> (comúnmente conocido como Vue; se pronuncia /vjuː/, como "view"3​) es un framework de JavaScript de código abierto para la construcción de interfaces de usuario y aplicaciones de una sola página. Fue creado por Evan You, y es mantenido por él y por el resto de los miembros activos del equipo central que provienen de diversas empresas como Netlify y Netguru.4
-                </p>
-
+                <a href="#">Leer más</a>
                 <div class="clearfix"></div>
             </article>
+        </div>
+        <!-- Añadir Articulos desde main.js -->
+
+
         </section>
 
         <!-- SideBar, Barra Lateral -->
