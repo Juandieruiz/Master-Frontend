@@ -349,14 +349,12 @@ textarea{
 @media (max-width: 1488px){
     /*Se ejecutarán estos estilos*/
     .center{
-        width: 85%;
+        width: 90%;
     }
-}
+    #brand{
+        margin-top: 10px;
 
-/*Desde la anchura 0px hasta la anchura 963px de pantalla*/
-@media (max-width: 1314px){
-    .center{
-        width: 95%;
+        font-size: 27px;
     }
 
     #menu ul{
@@ -364,32 +362,76 @@ textarea{
     }
 }
 
-@media (max-width: 881px){
-    #logo{
-        width: 265px;
+/*Desde la anchura 0px hasta la anchura 1140px de pantalla*/
+@media (max-width: 1173px){
+    .center{
+        width: 90%;
+    }
+    #brand{
+        margin-top: 10px;
+        font-size: 25px;
     }
 
-    #menu{
+    #menu ul{
+        width: auto;
+    }
+}
+/*Desde la anchura 0px hasta la anchura 1020px de pantalla*/
+@media (max-width: 1120px){
+    .center{
+        width: 90%;
+    }
+    #brand{
+        margin-top: 10px;
+        font-size: 23px;
+    }
+
+    #menu ul{
         width: auto;
     }
 }
 
-@media (max-width: 813px){
+@media (max-width: 1030px){
+    .center{
+        width: 90%;
+    }
+    #brand{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    #menu ul{
+        width: auto;
+    }
+}
+
+@media (max-width: 970px){
+    
+    #header{
+        min-height: 120px;
+        overflow: hidden;
+    }
     #logo{
         float:none;
-        /*width: 240px;*/
+        width: 262px;
         margin: 0px auto;
         margin-top: 20px;
+    }
+    
+    #brand {
+        margin-top: 7px;
+        margin-left: 1px;
+        font-size: 20px;
     }
 
     #menu,
     #menu ul{
-       clear:both;
-       float:none;
-       width: 100%;
-       margin: 0px;
-       padding: 0px;
-       line-height: 43px;
+        clear:both;
+        float:none;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        line-height: 43px;
     }
 
     #content{
@@ -400,7 +442,7 @@ textarea{
     #sidebar{
         float:none;
         width: 60%;
-        margin: 0px auto;
+        margin:0px auto;
         margin-bottom: 50px;
     }
 
@@ -409,45 +451,44 @@ textarea{
         font-size: 25px;
     }
 
-    .mid-form{
-        width: 70%;
+    .mid form{
+        width:70%
     }
 }
+    @media (max-width: 520px){
+        #header{
+            min-height: 160px;
+            overflow: hidden;
+        }
 
-@media (max-width: 497px){
-    #header{
-        min-height: 130px;
-        overflow:hidden;
-    }
+        #menu,
+        #menu ul{
+            line-height: 50px;
+        }
 
-    #menu,
-    #menu ul{
-        line-height: 50px;
-    }
+        #menu ul li{
+            margin-left: 7px;
+            margin-right: 7px;
+        }
 
-    #menu ul li{
-        margin-left: 7px;
-        margin-right: 7px;
-    }
+        #slider{
+            height: 180px;
+        }
 
-    #slider{
-        height: 180px;
-    }
+        #slider h1{
+            font-size: 19px;
+            padding-top: 30px;
+        }
 
-    #slider h1{
-        font-size: 19px;
-        padding-top: 30px;
-    }
+        #slider .btn-white{
+            margin-top: 20px;
+        }
 
-    #slider .btn-white{
-        margin-top: 20px;
-    }
+        #slider.slider-small{
+            height : 100px;
+        }
 
-    #slider.slider-small{
-        height: 100px;
+        #slider.slider-small h1{
+            padding-top: 35px;
+        }
     }
-
-    #slider.slider-small h1{
-       padding-top: 35px;
-    }
-}
