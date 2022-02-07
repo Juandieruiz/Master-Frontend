@@ -16,3 +16,12 @@
 
 - [NodeJS](https://nodejs.org/es/download/)
 - Versión estable: (todo)
+
+## Instalacion de dependencias (librerias)
+
+- Express ```npm install express --save```
+- Mongoose ```npm install mongoose --save```
+- Body-Parser ```npm install body-parser --save```
+- Connect-multiparty ```npm install connect-multiparty --save```
+- validator ```npm install validator --save```
+- etc...
