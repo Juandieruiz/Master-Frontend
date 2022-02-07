@@ -8,6 +8,7 @@ const bodyParser = require('body-parser'); // Middleware para leer el body de lo
 const app = express();
 
 // Cargar ficheros rutas
+const article_routes = require('./routes/article');
 
 // Middlewares (funciones que se ejecutan antes de llegar a las rutas)
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,20 +16,9 @@ app.use(bodyParser.json());
 
 // CORS
 
-// Añadir prefijos a rutas
+// Añadir prefijos a rutas / Cargar rutas
+app.use('/api',article_routes);
 
-// rutas
-app.post('/datos-curso', (req, res) => {
-    let prueba = req.body.prueba;
-
-
-    return res.status(200).send({
-        curso: 'Master en Frameworks Javascript',
-        autor: 'Juandieruiz',
-        'url': 'allmylinks.com/juandieruiz',
-        prueba
-    });
-});
 
 // Exportar modulo (fichero actual)
 module.exports = app;

@@ -2,7 +2,7 @@
 // Conexion a la base de datos
 
 // import { connect } from 'mongoose';
-const mongoose = require('mongoose');   // Mongoose
+const mongoose = require('mongoose');   // Mongoose 
 const app = require('./app');   // app.js
 const port = 3900;  // Puerto en el que va a escuchar
 

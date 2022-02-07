@@ -38,3 +38,11 @@
 - importacion de modulos
 - middlewares
 - rutas
+
+## Creamos un modelo
+
+- folder: models
+- archivo: article.js
+- Este modelo es para la coleccion de articulos
+
+## Creamos un controlador
