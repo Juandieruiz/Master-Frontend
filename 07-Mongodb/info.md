@@ -25,4 +25,5 @@
     - /data/db
     - mongod.exe
     - revisamos que este funcionando con comandos basicos como ```help``` o ```show dbs```
-    - 
+    
+- Creamos la base de datos que vayamos a usar para probar el gestionamiento hasta que construyamos nuestra API RESTful con NodeJS.
