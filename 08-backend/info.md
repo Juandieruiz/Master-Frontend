@@ -31,3 +31,10 @@
 
 - archivo index.js
 - creamos un script para nodemon
+
+## Creacion de un servidor
+
+- archivo app.js
+- importacion de modulos
+- middlewares
+- rutas
