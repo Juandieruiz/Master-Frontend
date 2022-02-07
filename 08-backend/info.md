@@ -24,4 +24,10 @@
 - Body-Parser ```npm install body-parser --save```
 - Connect-multiparty ```npm install connect-multiparty --save```
 - validator ```npm install validator --save```
-- etc...
+- nodemon en desarrollo ```npm install nodemon --save-dev```
+
+
+## Conectamos a MongoDB con Mongoose
+
+- archivo index.js
+- creamos un script para nodemon

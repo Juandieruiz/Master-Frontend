@@ -4,6 +4,7 @@
   "description": "API RESTful del Master en Frameworks para JS creado por Juan Diego Gomez.",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Juan Diego Gómez",
@@ -14,5 +15,8 @@
     "express": "^4.17.2",
     "mongoose": "^6.2.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
