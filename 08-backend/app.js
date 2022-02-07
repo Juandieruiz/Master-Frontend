@@ -18,11 +18,15 @@ app.use(bodyParser.json());
 // Añadir prefijos a rutas
 
 // rutas
-app.get('/datos-curso', (req, res) => {
+app.post('/datos-curso', (req, res) => {
+    let prueba = req.body.prueba;
+
+
     return res.status(200).send({
         curso: 'Master en Frameworks Javascript',
         autor: 'Juandieruiz',
-        'url': 'allmylinks.com/juandieruiz'
+        'url': 'allmylinks.com/juandieruiz',
+        prueba
     });
 });
 
