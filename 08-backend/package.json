@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "API RESTful del Master en Frameworks para JS creado por Juan Diego Gomez.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Diego Gómez",
+  "license": "MIT"
+}
