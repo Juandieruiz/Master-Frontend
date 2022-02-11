@@ -13,7 +13,7 @@ router.get('/test-de-controlador', ArticleController.prueba);
 // rutas para articulos
 router.post('/save', ArticleController.save);
 router.get('/articles/:dataUrl?', ArticleController.getArticles);
-
+router.get('/article/:id', ArticleController.getArticle);
 
 
 module.exports = router;
