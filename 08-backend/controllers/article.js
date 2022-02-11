@@ -73,8 +73,19 @@ const controller = {
     },
 
     getArticles: (req, res) => {
+        
+        let finder = Article.find({});
+
+        let dataUrl = req.params.dataUrl;
+
+            if (dataUrl || dataUrl != undefined){
+                finder.limit(5)
+            }
+
+
         // Find
-        Article.find({}).sort({'id'}).exec((err, articles) => {
+        finder.sort('-_id').exec((err, articles) => {
+            
             if(err){
                 return res.status(500).send({
                     status: 'error',
