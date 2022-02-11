@@ -9,6 +9,7 @@ let router = express.Router();
 
 router.post('/datos-curso', ArticleController.datosCurso);
 router.get('/test-de-controlador', ArticleController.prueba);
+router.get('/articles', ArticleController.getArticles);
 
 // rutas para articulos
 router.post('/save', ArticleController.save);

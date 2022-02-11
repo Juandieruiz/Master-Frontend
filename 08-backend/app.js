@@ -8,7 +8,7 @@ const bodyParser = require('body-parser'); // Middleware para leer el body de lo
 const app = express();
 
 // Cargar ficheros rutas
-const article_routes = require('./routes/article');
+const article_routes = require('./routes/article');    
 
 // Middlewares (funciones que se ejecutan antes de llegar a las rutas)
 app.use(bodyParser.urlencoded({ extended: false }));
