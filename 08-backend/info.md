@@ -46,3 +46,10 @@
 - Este modelo es para la coleccion de articulos
 
 ## Creamos un controlador
+
+>En el controlador creamos los metodos:
+    - datosCurso
+    - prueba
+    - SaveArticle
+    - getArticles
+    - getArticle
