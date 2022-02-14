@@ -53,3 +53,5 @@
     - SaveArticle
     - getArticles
     - getArticle
+    - update
+    - dekete
