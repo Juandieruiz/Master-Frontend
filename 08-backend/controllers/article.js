@@ -136,7 +136,7 @@ const controller = {
 
         });
     },
-
+    // METODO ACTUALIZAR
     update: (req, res) => {
         // Recoger el id del articulo por la url
         var articleId = req.params.id;
@@ -157,7 +157,7 @@ const controller = {
 
         if(validate_title && validate_content){
              // Find and update
-             Article.findOneAndUpdate({_id: articleId}, params, {new:true}, (err, articleUpdated) => {
+            Article.findOneAndUpdate({_id: articleId}, params, {new:true}, (err, articleUpdated) => {
                 if(err){
                     return res.status(500).send({
                         status: 'error',
@@ -184,8 +184,8 @@ const controller = {
                 message: 'La validación no es correcta !!!'
             });
         }
-       
     },
+    // METODO BORRAR
 
     delete: (req, res) => {
         // Recoger el id de la url
