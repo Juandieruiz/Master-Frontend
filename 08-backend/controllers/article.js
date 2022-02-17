@@ -216,11 +216,11 @@ const controller = {
 
         }); 
     },
-    upload:(req,res) => {
-        // Configurar el modulo connect multiparty router/article.js
+    upload: (req, res) => {
+        // Configurar el modulo connect multiparty router/article.js (hecho)
 
-        // Recoger fichero de la petición
-        const file_name = 'Imagen no subida...';
+        // Recoger el fichero de la petición
+        var file_name = 'Imagen no subida...';
 
         if(!req.files){
             return res.status(404).send({
@@ -229,49 +229,110 @@ const controller = {
             });
         }
 
-        // Conseguir nombre y la extension del archivo
-        const file_path = req.files.file0.path;
-        const file_split = file_path.split('\\');
+        // Conseguir nombre y la extensión del archivo
+        var file_path = req.files.file0.path;
+        var file_split = file_path.split('\\');
 
-        /*  ADVERTENCIA EN LINUX O MAC 
-        const file_split = file_path.split('/'); */
+        // * ADVERTENCIA * EN LINUX O MAC
+        // var file_split = file_path.split('/');
 
         // Nombre del archivo
-        const file_name = file_split[2];
+        var file_name = file_split[2];
 
-        //Extensión del fichero
-        const extension_split = file_name.split('\.');
-        const file_ext = extension_split[1];
+        // Extensión del fichero
+        var extension_split = file_name.split('\.');
+        var file_ext = extension_split[1];
 
         // Comprobar la extension, solo imagenes, si es valida borrar el fichero
         if(file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif'){
+            
             // borrar el archivo subido
-                fs.unlink(file_path, (err) => {
-                    return res.status.send(200)({
-                        status: 'error',
-                        message: 'La extension del archivo no es valida !!!'
-                    })
+            fs.unlink(file_path, (err) => {
+                return res.status(200).send({
+                    status: 'error',
+                    message: 'La extensión de la imagen no es válida !!!'
                 });
+            });
+        
         }else{
-            // Si todo es valido
-                var articleId = req.params.id;
-            // Buscar el articulo, asignarle el nombre de la imagen y actualizarlo
-                Article.findOneAndUpdate({_id: articleId}, {image: file_name}, {new:true}, (err,articleUpdated) => {
-                    
+             // Si todo es valido, sacando id de la url
+             var articleId = req.params.id;
+
+             if(articleId){
+                // Buscar el articulo, asignarle el nombre de la imagen y actualizarlo
+                Article.findOneAndUpdate({_id: articleId}, {image: file_name}, {new:true}, (err, articleUpdated) => {
+
                     if(err || !articleUpdated){
-                        return res.status(404).send({
+                        return res.status(200).send({
                             status: 'error',
-                            article: 'Error al guardar la imagen de artículo !!!'
-                    });
+                            message: 'Error al guardar la imagen de articulo !!!'
+                        });
                     }
 
                     return res.status(200).send({
                         status: 'success',
                         article: articleUpdated
+                    });
                 });
+             }else{
+                return res.status(200).send({
+                    status: 'success',
+                    image: file_name
+                });
+             }
+            
+        }   
+    }, // end upload file
+
+    // METODO PARA OBTENER LA IMAGEN DEL ARTICULO
+    getImage: (req, res) => {
+        var file = req.params.image;
+        var path_file = './upload/articles/' + file;
+
+        if (fs.existsSync(path_file)) {
+            return res.sendFile(path.resolve(path_file));
+        } else {
+            return res.status(404).send({
+                status: 'error',
+                mesagge: 'ninguna image con este nombre'
             });
-        }        
+        }
+    },
+    // Metodo para buscar articulos
+    search: (req, res) => {
+        // Sacar el string a buscar
+        var searchString = req.params.search;
+
+        // Find or
+        Article.find({ "$or": [
+            { "title": { "$regex": searchString, "$options": "i"}},
+            { "content": { "$regex": searchString, "$options": "i"}}
+        ]})
+        .sort([['date', 'descending']])
+        .exec((err, articles) => {
+
+            if(err){
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error en la petición !!!'
+                });
+            }
+            
+            if(!articles || articles.length <= 0){
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No hay articulos que coincidan con tu busqueda !!!'
+                });
+            }
+
+            return res.status(200).send({
+                status: 'success',
+                articles
+            });
+
+        });
     }
+
 
 }; // end controller
 
