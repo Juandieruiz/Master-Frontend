@@ -214,6 +214,50 @@ const controller = {
 
         }); 
     },
+    upload:(req,res) => {
+        // Configurar el modulo connect multiparty router/article.js
+
+        // Recoger fichero de la petición
+        const file_name = 'Imagen no subida...';
+
+        if(!req.files){
+            return res.status(404).send({
+                status: 'error',
+                message: file_name
+            });
+        }
+
+        // Conseguir nombre y la extension del archivo
+        const file_path = req.files.file0.path;
+        const file_split = file_path.split('\\');
+
+        /*  ADVERTENCIA EN LINUX O MAC 
+        const file_split = file_path.split('/'); */
+
+        // Nombre del archivo
+        const file_name = file_split[2];
+
+        //Extensión del fichero
+        const extension_split = file_name.split('\.');
+        const file_ext = extension_split[1];
+
+        // Comprobar la extension, solo imagenes, si es valida borrar el fichero
+        if(file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif'){
+        // borrar el archivo subido
+    }else{
+        // Si todo es valido
+
+        // Buscar el articulo, asignarle el nombre de la imagen y actualizarlo
+    }
+
+        // Si todo es valido
+
+        // Buscar el artícul, asignarle el nombre de la imagen y actualizarlo
+        return res.status(404).send({
+            fichero: req.files,
+            split: file_split
+        });
+    }
 
     
 
