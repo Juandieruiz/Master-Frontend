@@ -1,6 +1,8 @@
 'use strict';
 const validator = require('validator');
 const Article = require('../models/article');
+const fs = require('fs'); // file system
+const path = require('path'); // path
 
 const controller = {
 
@@ -243,23 +245,33 @@ const controller = {
 
         // Comprobar la extension, solo imagenes, si es valida borrar el fichero
         if(file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif'){
-        // borrar el archivo subido
-    }else{
-        // Si todo es valido
+            // borrar el archivo subido
+                fs.unlink(file_path, (err) => {
+                    return res.status.send(200)({
+                        status: 'error',
+                        message: 'La extension del archivo no es valida !!!'
+                    })
+                });
+        }else{
+            // Si todo es valido
+                var articleId = req.params.id;
+            // Buscar el articulo, asignarle el nombre de la imagen y actualizarlo
+                Article.findOneAndUpdate({_id: articleId}, {image: file_name}, {new:true}, (err,articleUpdated) => {
+                    
+                    if(err || !articleUpdated){
+                        return res.status(404).send({
+                            status: 'error',
+                            article: 'Error al guardar la imagen de artículo !!!'
+                    });
+                    }
 
-        // Buscar el articulo, asignarle el nombre de la imagen y actualizarlo
+                    return res.status(200).send({
+                        status: 'success',
+                        article: articleUpdated
+                });
+            });
+        }        
     }
-
-        // Si todo es valido
-
-        // Buscar el artícul, asignarle el nombre de la imagen y actualizarlo
-        return res.status(404).send({
-            fichero: req.files,
-            split: file_split
-        });
-    }
-
-    
 
 }; // end controller
 
