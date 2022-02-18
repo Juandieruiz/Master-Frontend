@@ -276,7 +276,7 @@ const controller = {
                 });
              }else{
                 return res.status(200).send({
-                    status: 'success',
+                    status: 'succb ess',
                     image: file_name
                 });
              }
