@@ -54,4 +54,7 @@
     - getArticles
     - getArticle
     - update
-    - dekete
+    - delete
+    -getImage
+
+    # !probar peticiones de back
